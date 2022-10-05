@@ -13,9 +13,9 @@ public class TaskRepositoryImpl implements TaskRepository {
         try {
             Class.forName("org.postgresql.Driver");
             //для localhost
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/habrdb", "user", "pass");
+//            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/habrdb", "user", "pass");
             //для облачного сервера
-//            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/admin", "admin", "aston");
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/admin", "admin", "aston");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
