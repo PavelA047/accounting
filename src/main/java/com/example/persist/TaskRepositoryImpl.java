@@ -155,4 +155,27 @@ public class TaskRepositoryImpl implements TaskRepository {
             }
         }
     }
+
+    @Override
+    public void insertNewUser(String userName) {
+        Timestamp defaultData = Timestamp.valueOf("2000-01-01 00:00:00.000000");
+        String defaultTask = "No task";
+        try {
+            preparedStatement = connection
+                    .prepareStatement("INSERT INTO tasks VALUES (DEFAULT, ?, ?, ?, null)");
+
+            preparedStatement.setTimestamp(1, defaultData);
+            preparedStatement.setString(2, userName);
+            preparedStatement.setString(3, defaultTask);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

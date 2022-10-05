@@ -8,13 +8,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/*")
-public class Servlet extends HttpServlet {
+public class ServletGet extends HttpServlet {
 
     private TaskRepository taskRepository;
     private Gson gson;
@@ -57,20 +56,8 @@ public class Servlet extends HttpServlet {
         }
     }
 
-    //обработка метода роутера insertNewTrack();
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Report report;
-        BufferedReader reader = request.getReader();
-        StringBuilder result = new StringBuilder();
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
 
-        request.setCharacterEncoding("UTF-8");
-        int intValueOfChar;
-        while ((intValueOfChar = reader.read()) != -1) {
-            result.append((char) intValueOfChar);
-        }
-        report = gson.fromJson(String.valueOf(result), Report.class);
-        taskRepository.insertReport(report);
-        reader.close();
     }
 }

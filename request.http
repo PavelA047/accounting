@@ -10,11 +10,20 @@ GET http://localhost:8080/accounting/withoutOneTrack
 
 ###
 
-POST http://localhost:8080/accounting/
+POST http://localhost:8080/accounting/insertNewTrack
 Content-Type: application/json
 
 {
   "userName": "asd",
   "task": "done",
   "timeOfTrack": "Oct 6, 2022, 1:37:25 AM"
+}
+
+###
+
+POST http://localhost:8080/accounting/insertNewUser
+Content-Type: application/json
+
+{
+  "name": "newwwwwwwqqqqqqqqqq"
 }

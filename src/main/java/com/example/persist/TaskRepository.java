@@ -12,4 +12,6 @@ public interface TaskRepository {
     List<Report> getListOfNonReportedTasks();
 
     void insertListOfUsers(List<String> listOfUsers);
+
+    void insertNewUser(String user);
 }
