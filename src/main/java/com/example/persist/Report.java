@@ -1,4 +1,4 @@
-package com.example.persist.model;
+package com.example.persist;
 
 import lombok.*;
 
