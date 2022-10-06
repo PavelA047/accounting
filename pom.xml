@@ -39,6 +39,11 @@
             <artifactId>gson</artifactId>
             <version>2.9.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>txw2</artifactId>
+            <version>2.4.0-b180830.0438</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -60,7 +65,7 @@
                     <!--                    <url>http://localhost:8080/manager/text</url>-->
                     <!--                    <username>admin</username>-->
                     <!--                    <password>password</password>-->
-                    <url>http://185.46.11.164:8080/manager/text</url>
+                    <url>http://194.67.119.135:8080/manager/text</url>
                     <username>admin</username>
                     <password>aston</password>
                     <path>/accounting</path>
