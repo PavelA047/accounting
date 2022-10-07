@@ -37,14 +37,14 @@ public class BootstrapListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         TaskRepository taskRepository = new TaskRepositoryImpl();
         sce.getServletContext().setAttribute("taskRepository", taskRepository);
-        String listOfUsersNames = null;
-        try {
-            listOfUsersNames = getHTML("http://localhost:8080/router_web_service_war/getUsers");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        if (listOfUsersNames == null) return;
-        List<String> list = gson.fromJson(listOfUsersNames, List.class);
-        taskRepository.insertListOfUsers(list);
+//        String listOfUsersNames = null;
+//        try {
+//            listOfUsersNames = getHTML("http://localhost:8080/router_web_service_war/getUsers");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        if (listOfUsersNames == null) return;
+//        List<String> list = gson.fromJson(listOfUsersNames, List.class);
+//        taskRepository.insertListOfUsers(list);
     }
 }
